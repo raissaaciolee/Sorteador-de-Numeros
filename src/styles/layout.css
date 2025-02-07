@@ -42,14 +42,16 @@ main {
     grid-template-areas:
       "header to-draw-and-result-container"
       "how-does-it-work to-draw-and-result-container";
+    grid-template-rows: 22.3rem;
 
     margin-top: 8.9rem;
     column-gap: 10%;
 
     & .how-does-it-work-container {
       grid-area: how-does-it-work;
-      bottom: 20%;
-      position: absolute;
+      margin-top: 3.8rem;
+      
+      align-self: self-start;
     }
 
     & #to-draw-container,
