@@ -1,4 +1,4 @@
-import { noRepeatButton } from "./no-repeat";
+import { noRepeatButton } from "./draw.js";
 
 const allInputs = document.querySelectorAll(".input-wrapper input");
 const inputValues = {

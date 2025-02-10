@@ -15,10 +15,12 @@ drawButton.addEventListener("click", (event) => {
     toDrawContainer.classList.add("hidden");
     resultContainer.classList.remove("hidden");
 
-    // Chama a função para sortear os números o número de vezes solicitado pelo usuário.
-    for (let i = 1; i <= inputValues.amountNumber; i++) {
-      drawANumber(inputValues.minNumber, inputValues.maxNumber);
-    }
+    // Chama a função para sortear os números.
+    drawANumber(
+      inputValues.minNumber,
+      inputValues.maxNumber,
+      inputValues.amountNumber
+    );
 
     // Mostra o resultado.
     showResults();

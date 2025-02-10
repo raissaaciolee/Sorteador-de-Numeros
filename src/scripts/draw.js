@@ -1,17 +1,20 @@
-import { noRepeatNumber, noRepeatButton } from "./no-repeat.js";
-
 let containerDrawnNumbers = [];
 let drawNumber = 0;
 
+const noRepeatButton = document.querySelector(".no-repeat-button");
+
 // FUNÇÃO PARA SORTEAR OS NÚMEROS
-const drawANumber = (min, max) => {
-  drawNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+const drawANumber = (min, max, amount) => {
+  for (let i = 1; i <= amount; i++) {
+    do {
+      drawNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+    } while (
+      noRepeatButton.checked &&
+      containerDrawnNumbers.includes(drawNumber)
+    );
 
-  // Atribui cada número sorteado ao array.
-  containerDrawnNumbers.push(drawNumber);
-
-  // Condição para caso o usuário náo queira repetir os números.
-  if (noRepeatButton.checked) noRepeatNumber();
+    containerDrawnNumbers.push(drawNumber);
+  }
 };
 
-export { drawANumber, containerDrawnNumbers };
+export { drawANumber, containerDrawnNumbers, noRepeatButton };
